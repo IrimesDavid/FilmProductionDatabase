@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.mvvm.view.CastV"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Define columns -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS"/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+    </columnConstraints>
+
+    <!-- Define rows -->
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS"/> <!-- Table row expands -->
+        <RowConstraints vgrow="NEVER"/>  <!-- Button row stays fixed -->
+    </rowConstraints>
+
+    <!-- TableView replacing ListView -->
+    <TableView fx:id="castsTable" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="5"
+               prefWidth="600.0" prefHeight="400.0"
+               maxWidth="Infinity" maxHeight="Infinity"
+               VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn"/>
+            <TableColumn text="Film ID" fx:id="filmIdColumn"/>
+            <TableColumn text="Actor ID" fx:id="actorIdColumn"/>
+            <TableColumn text="Role" fx:id="roleColumn"/>
+        </columns>
+    </TableView>
+
+    <TextField fx:id="message" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+    <Button fx:id="addButton" text="Add" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button fx:id="updateButton" text="Update" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <Button fx:id="deleteButton" text="Delete" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+    <Button fx:id="selectFilmButton" text="Select Film" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+</GridPane>

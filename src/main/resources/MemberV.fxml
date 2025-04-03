@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="org.mvvm.view.MemberV"
+          prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Define columns -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS"/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+    </columnConstraints>
+
+    <!-- Define rows -->
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS"/> <!-- Table row expands -->
+        <RowConstraints vgrow="NEVER"/>  <!-- Button row stays fixed -->
+    </rowConstraints>
+
+    <!-- TableView replacing ListView -->
+    <TableView fx:id="membersTable" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="6"
+               prefWidth="600.0" prefHeight="400.0"
+               maxWidth="Infinity" maxHeight="Infinity"
+               VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn"/>
+            <TableColumn text="Name" fx:id="nameColumn"/>
+            <TableColumn text="Birthdate" fx:id="birthdateColumn"/>
+            <TableColumn text="Type" fx:id="typeColumn"/>
+            <TableColumn text="ImageURL" fx:id="imageURLColumn"/>
+        </columns>
+    </TableView>
+
+    <TextField fx:id="message" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+    <Button fx:id="addButton" text="Add" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button fx:id="updateButton" text="Update" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <Button fx:id="deleteButton" text="Delete" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+    <Button fx:id="viewImageButton" text="View image" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+    <ComboBox fx:id="filterMenu" GridPane.rowIndex="1" GridPane.columnIndex="5"/>
+
+</GridPane >
